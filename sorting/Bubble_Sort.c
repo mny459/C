@@ -14,8 +14,9 @@ void display(int arr[], int n){
 }
 
 /*Swap function to swap two values*/
+/*交换数组的两个值，也就是交换内存地址中的两个值*/
 void swap(int *first, int *second){
-    
+    printf("=== %d \n", *first);
     int temp = *first;
     *first = *second;
     *second = temp;
@@ -27,7 +28,15 @@ void swap(int *first, int *second){
  size --- Array Size
  */
 void bubbleSort(int arr[], int size){
-    
+    for(int i = 0; i< size-1; i++){
+        for(int j = 0 ; i< size - 1-i;j++){
+            if(arr[j] > arr[j+1]) {
+                swap(&arr[j],&arr[j+1]);
+            }
+        }
+    }
+
+
     for(int i=0; i<size-1; i++) {
         for(int j=0; j<size-1-i; j++) {
             if(arr[j]>arr[j+1]) {
